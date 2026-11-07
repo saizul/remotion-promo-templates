@@ -1,0 +1,10 @@
+{
+  "title": "5 tips for faster websites",
+  "points": ["Compress your images", "Lazy-load below the fold", "Cache aggressively", "Ship less JavaScript"],
+  "cta": "Read the full post",
+  "source": "yourblog.com",
+  "primaryColor": "#6C5CE7",
+  "accentColor": "#00D2A0",
+  "backgroundColor": "#0B0B14",
+  "textColor": "#FFFFFF"
+}

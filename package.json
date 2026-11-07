@@ -1,0 +1,31 @@
+{
+  "name": "remotion-promo-templates",
+  "version": "1.0.0",
+  "description": "Props-driven Remotion 4 promo video templates (product promo, service ad, YouTube intro, blog-to-reel) built for JSON automation.",
+  "license": "MIT",
+  "author": "Saizul Amin <https://saizul.com>",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "typecheck": "tsc --noEmit",
+    "render": "node scripts/render-from-json.mjs",
+    "render:product": "node scripts/render-from-json.mjs ProductPromo props/product-promo.json",
+    "render:service": "node scripts/render-from-json.mjs ServiceAd props/service-ad.json",
+    "render:intro": "node scripts/render-from-json.mjs YouTubeIntro props/youtube-intro.json",
+    "render:reel": "node scripts/render-from-json.mjs BlogToReel props/blog-to-reel.json"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.541",
+    "@remotion/google-fonts": "4.0.541",
+    "@remotion/zod-types": "4.0.541",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.541",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}
