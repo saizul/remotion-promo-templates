@@ -14,6 +14,7 @@ No copyrighted music, brand assets or non-redistributable fonts are included. Fo
 | `ServiceAd`    | 1080x1080 | 12 s     | Logo text, headline, 3 animated benefits, CTA    |
 | `YouTubeIntro` | 1920x1080 | 6 s      | Kinetic title and subtitle                       |
 | `BlogToReel`   | 1080x1920 | 20 s     | Blog title plus 3 to 5 key points, for Reels     |
+| `TestimonialCard` | 1080x1350 | 10 s  | Client quote, star rating, author, CTA (4:5 feed post) |
 
 All run at 30 fps. Colors (`primaryColor`, `accentColor`, `backgroundColor`, `textColor`) are props on every template; defaults live in `src/theme.ts`.
 
@@ -40,7 +41,7 @@ node scripts/render-from-json.mjs ProductPromo props/product-promo.json out/prom
 node scripts/render-from-json.mjs BlogToReel props/blog-to-reel.json --still 225
 ```
 
-Shortcuts: `npm run render:product`, `render:service`, `render:intro`, `render:reel`. The script wraps `npx remotion render` (or `remotion still`) with `--props=<file>`. Example inputs are in `props/`. Missing props fall back to the schema defaults.
+Shortcuts: `npm run render:product`, `render:service`, `render:intro`, `render:reel`, `render:testimonial`. The script wraps `npx remotion render` (or `remotion still`) with `--props=<file>`. Example inputs are in `props/`. Missing props fall back to the schema defaults.
 
 ### Props reference
 
@@ -48,6 +49,7 @@ Shortcuts: `npm run render:product`, `render:service`, `render:intro`, `render:r
 - `ServiceAd`: `logoText`, `headline`, `benefits` (exactly 3), `cta`
 - `YouTubeIntro`: `title`, `subtitle`
 - `BlogToReel`: `title`, `points` (3 to 5), `cta`, `source`
+- `TestimonialCard`: `quote`, `author`, `role`, `rating` (1 to 5), `cta`
 
 ## Automating with n8n
 
@@ -77,7 +79,7 @@ src/
   schemas.ts        zod schemas and prop types
   theme.ts          colors, Google Fonts, spring presets
   components.tsx    shared background, CTA button, progress bar
-  compositions/     the four templates
+  compositions/     the five templates
 props/              example JSON inputs
 scripts/            render-from-json.mjs
 ```
