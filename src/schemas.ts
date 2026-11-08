@@ -45,7 +45,17 @@ export const blogToReelSchema = z.object({
   ...colors,
 });
 
+export const testimonialCardSchema = z.object({
+  quote: z.string().default('They rebuilt our site in three weeks and our leads doubled.'),
+  author: z.string().default('Jane Doe'),
+  role: z.string().default('Founder, Example Co.'),
+  rating: z.number().int().min(1).max(5).default(5),
+  cta: z.string().default('Read more client stories'),
+  ...colors,
+});
+
 export type ProductPromoProps = z.infer<typeof productPromoSchema>;
 export type ServiceAdProps = z.infer<typeof serviceAdSchema>;
 export type YouTubeIntroProps = z.infer<typeof youTubeIntroSchema>;
 export type BlogToReelProps = z.infer<typeof blogToReelSchema>;
+export type TestimonialCardProps = z.infer<typeof testimonialCardSchema>;

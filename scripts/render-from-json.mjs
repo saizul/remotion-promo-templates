@@ -22,7 +22,7 @@ if (stillIdx !== -1) {
 const [composition, propsFile, output] = args;
 if (!composition || !propsFile) {
   console.error('Usage: node scripts/render-from-json.mjs <CompositionId> <props.json> [output] [--still [frame]]');
-  console.error('Compositions: ProductPromo, ServiceAd, YouTubeIntro, BlogToReel');
+  console.error('Compositions: ProductPromo, ServiceAd, YouTubeIntro, BlogToReel, TestimonialCard');
   process.exit(1);
 }
 if (!existsSync(propsFile)) {

@@ -4,7 +4,14 @@ import {ProductPromo} from './compositions/ProductPromo';
 import {ServiceAd} from './compositions/ServiceAd';
 import {YouTubeIntro} from './compositions/YouTubeIntro';
 import {BlogToReel} from './compositions/BlogToReel';
-import {blogToReelSchema, productPromoSchema, serviceAdSchema, youTubeIntroSchema} from './schemas';
+import {TestimonialCard} from './compositions/TestimonialCard';
+import {
+  blogToReelSchema,
+  productPromoSchema,
+  serviceAdSchema,
+  testimonialCardSchema,
+  youTubeIntroSchema,
+} from './schemas';
 
 const FPS = 30;
 
@@ -18,5 +25,7 @@ export const RemotionRoot: React.FC = () => (
       defaultProps={youTubeIntroSchema.parse({})} width={1920} height={1080} fps={FPS} durationInFrames={6 * FPS} />
     <Composition id="BlogToReel" component={BlogToReel} schema={blogToReelSchema}
       defaultProps={blogToReelSchema.parse({})} width={1080} height={1920} fps={FPS} durationInFrames={20 * FPS} />
+    <Composition id="TestimonialCard" component={TestimonialCard} schema={testimonialCardSchema}
+      defaultProps={testimonialCardSchema.parse({})} width={1080} height={1350} fps={FPS} durationInFrames={10 * FPS} />
   </>
 );

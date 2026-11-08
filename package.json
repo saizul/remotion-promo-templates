@@ -13,7 +13,8 @@
     "render:product": "node scripts/render-from-json.mjs ProductPromo props/product-promo.json",
     "render:service": "node scripts/render-from-json.mjs ServiceAd props/service-ad.json",
     "render:intro": "node scripts/render-from-json.mjs YouTubeIntro props/youtube-intro.json",
-    "render:reel": "node scripts/render-from-json.mjs BlogToReel props/blog-to-reel.json"
+    "render:reel": "node scripts/render-from-json.mjs BlogToReel props/blog-to-reel.json",
+    "render:testimonial": "node scripts/render-from-json.mjs TestimonialCard props/testimonial-card.json"
   },
   "dependencies": {
     "@remotion/cli": "4.0.541",
