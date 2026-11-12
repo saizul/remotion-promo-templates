@@ -1,18 +1,13 @@
 import {loadFont as loadInter} from '@remotion/google-fonts/Inter';
 import {loadFont as loadSora} from '@remotion/google-fonts/Sora';
 import {spring, interpolate} from 'remotion';
+import {palette} from './palette';
 
 export const {fontFamily: bodyFont} = loadInter('normal', {weights: ['400', '600'], subsets: ['latin']});
 export const {fontFamily: displayFont} = loadSora('normal', {weights: ['700', '800'], subsets: ['latin']});
 
 export const theme = {
-  colors: {
-    primary: '#6C5CE7',
-    accent: '#00D2A0',
-    background: '#0B0B14',
-    text: '#FFFFFF',
-    muted: '#A9A9C0',
-  },
+  colors: palette,
   fonts: {display: displayFont, body: bodyFont},
   radius: 32,
   spring: {

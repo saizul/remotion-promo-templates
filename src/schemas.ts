@@ -1,12 +1,12 @@
 import {z} from 'zod';
 import {zColor} from '@remotion/zod-types';
-import {theme} from './theme';
+import {palette} from './palette';
 
 const colors = {
-  primaryColor: zColor().default(theme.colors.primary),
-  accentColor: zColor().default(theme.colors.accent),
-  backgroundColor: zColor().default(theme.colors.background),
-  textColor: zColor().default(theme.colors.text),
+  primaryColor: zColor().default(palette.primary),
+  accentColor: zColor().default(palette.accent),
+  backgroundColor: zColor().default(palette.background),
+  textColor: zColor().default(palette.text),
 };
 
 export const productPromoSchema = z.object({
