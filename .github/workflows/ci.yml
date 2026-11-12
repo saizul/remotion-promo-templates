@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run validate
+      - name: Render one still per template
+        run: |
+          set -e
+          while read -r id file; do
+            node scripts/render-from-json.mjs "$id" "props/$file.json" "out/$id.png" --still 90
+          done <<'LIST'
+          ProductPromo product-promo
+          ServiceAd service-ad
+          YouTubeIntro youtube-intro
+          BlogToReel blog-to-reel
+          TestimonialCard testimonial-card
+          LIST
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stills
+          path: out/*.png
